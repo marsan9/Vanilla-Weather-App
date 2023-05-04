@@ -69,3 +69,8 @@ a {
   background-color: rgb(68, 68, 135);
   border: 1px solid rgb(44, 44, 69);
 }
+.btn:hover {
+  background-color: white;
+  color: rgb(68, 68, 135);
+  border: 1px solid rgb(44, 44, 69);
+}
