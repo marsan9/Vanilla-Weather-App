@@ -2,11 +2,11 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 h1 {
-  color: rgb(175, 175, 181);
+  color: rgb(151, 151, 183);
   font-size: 30px;
   font-weight: 400;
   line-height: 28px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
 }
 ul {
   margin: 0;
@@ -16,7 +16,7 @@ li {
   list-style: none;
   margin: 0;
   padding: 0;
-  color: rgb(182, 170, 192);
+  color: rgb(181, 181, 210);
   font-size: 16px;
   font-weight: 100;
   line-height: 19px;
@@ -44,7 +44,7 @@ li:first-letter {
   width: 64px;
 }
 .weather-temperature strong {
-  color: blue;
+  color: rgb(108, 108, 152);
   font-size: 64px;
   font-weight: 400;
   line-height: 64px;
@@ -56,11 +56,16 @@ li:first-letter {
 }
 a {
   text-decoration: none;
+  color: rgb(63, 11, 186);
 }
 .weather-temperature .active {
-  color: black;
+  color: rgb(141, 141, 162);
   cursor: default;
 }
 .weather-temperature .active:hover {
   text-decoration: none;
+}
+.btn {
+  background-color: rgb(68, 68, 135);
+  border: 1px solid rgb(44, 44, 69);
 }
