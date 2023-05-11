@@ -1,5 +1,5 @@
 function formatDate(timestamp) {
-  let days = ["Sun", "Mon", "Tues", "Wed", "Thurs", "Fri", "Sat"];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let months = [
     "Jan",
     "Feb",
