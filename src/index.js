@@ -30,7 +30,7 @@ function formatDate(timestamp) {
   return `${day}, ${month} ${currentDate}, ${year} at ${hours}:${minutes}`;
 }
 
-function displayForecast() {
+function displayForecast(response) {
   let forecastElement = document.querySelector("#forecast");
 
   let days = ["Mon", "Tue", "Wed", "Thu"];
@@ -38,10 +38,9 @@ function displayForecast() {
 
   days.forEach(function (day) {
     forecastHTML =
-      forcastHTML +
+      forecastHTML +
       `<div class="col-2">
                   <div class="weather-forecast-date">${day}</div>
-                  Thu
                   <img
                     src="http://shecodes-assets.s3.amazonaws.com/api/weather/icons/clear-sky-day.png"
                     alt=""
@@ -55,6 +54,13 @@ function displayForecast() {
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "90e33c672cfe3413c0db44eo24acdt64";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
@@ -75,6 +81,8 @@ function displayTemperature(response) {
   windElement.innerHTML = Math.round(response.data.wind.degree);
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
+
+  getForecast(response.data.coordinates);
 }
 
 function search(city) {
@@ -119,7 +127,6 @@ let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
 
 search("New York");
-displayForecast();
 
 //longitude =
 //latitude =
