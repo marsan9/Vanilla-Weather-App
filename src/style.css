@@ -65,6 +65,9 @@ a {
 .weather-temperature .active:hover {
   text-decoration: none;
 }
+#temp-feel {
+  color: rgb(108, 108, 152);
+}
 .btn {
   background-color: rgb(68, 68, 135);
   border: 1px solid rgb(44, 44, 69);
@@ -73,6 +76,15 @@ a {
   background-color: white;
   color: rgb(68, 68, 135);
   border: 1px solid rgb(44, 44, 69);
+}
+#current-location-button {
+  background-color: rgb(51, 95, 161);
+  border: 1px solid rgb(16, 78, 171);
+}
+#current-location-button:hover {
+  background-color: white;
+  color: rgb(51, 95, 161);
+  border: 1px solid rgb(16, 78, 171);
 }
 .weather-forecast {
   margin-top: 20px;

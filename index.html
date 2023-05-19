@@ -28,11 +28,11 @@
                   id="city-input"
                 />
               </div>
-              <div class="col-2">
+              <div class="col-3">
                 <input
                   type="submit"
                   value="Search"
-                  class="btn btn-primary w-200"
+                  class="btn btn-primary w-100"
                 />
               </div>
             </div>
@@ -45,7 +45,7 @@
             </ul>
           </div>
           <div class="row">
-            <div class="col-6">
+            <div class="col-4">
               <div class="d-flex weather-temperature">
                 <img
                   src="https://ssl.gstatic.com/onebox/weather/64/rain_light.png"
@@ -56,10 +56,18 @@
                 <span class="units"> °F </span>
               </div>
             </div>
-            <div class="col-6">
+            <div class="col-4">
               <ul>
+                <li id="temp-feel">
+                  Feels Like: <span id="feels-like"></span>°F
+                </li>
                 <li>Humidity: <span id="humidity"></span>%</li>
+              </ul>
+            </div>
+            <div class="col-4">
+              <ul>
                 <li>Wind: <span id="wind"></span> mph</li>
+                <li>Pressure: <span id="pressure"></span> mb</li>
               </ul>
             </div>
             <div class="weather-forecast" id="forecast"></div>

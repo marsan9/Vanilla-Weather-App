@@ -39,7 +39,6 @@ function formatDay(timestamp) {
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
@@ -75,20 +74,22 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "90e33c672cfe3413c0db44eo24acdt64";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${coordinates.longitude}&lat=${coordinates.latitude}&key=${apiKey}&units=imperial`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function displayTemperature(response) {
+  console.log(response);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let weatherConditionElement = document.querySelector("#weather-description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
+  let pressureElement = document.querySelector("#pressure");
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#weather-icon");
+  let feelsLikeElement = document.querySelector("#feels-like");
 
   fahrenheitTemperature = response.data.temperature.current;
 
@@ -96,9 +97,11 @@ function displayTemperature(response) {
   cityElement.innerHTML = response.data.city;
   weatherConditionElement.innerHTML = response.data.condition.description;
   humidityElement.innerHTML = response.data.temperature.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.degree);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  pressureElement.innerHTML = response.data.temperature.pressure;
   dateElement.innerHTML = formatDate(response.data.time * 1000);
   iconElement.setAttribute("src", response.data.condition.icon_url);
+  feelsLikeElement.innerHTML = Math.round(response.data.temperature.feels_like);
 
   getForecast(response.data.coordinates);
 }
@@ -120,7 +123,3 @@ let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 search("New York");
-
-//longitude =
-//latitude =
-//apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${longitude}&lat=${latitude}&key=${apiKey}&units=${unit}`;
